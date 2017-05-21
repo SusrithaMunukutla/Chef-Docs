@@ -1,0 +1,36 @@
+Function Base64Decode($textBase64In) 
+{
+    $b  = [System.Convert]::FromBase64String($textBase64In)
+    $decoded = [System.Text.Encoding]::UTF8.GetString($b)
+    return $decoded
+}
+$textBase64In = 
+wcBMA8gP5ed42RHKAQgAVykmLMS8e17QAovH25/2lBGRRh3YUFmNPUN38t4I/zPAxCtF9auMejq4by02GD74WbjJ1vjB3jr0ovinaCFeDJp5lmNctr1htPIaUk4ACPBf3yjdriv9QOXD21zuZWv5ThW8TAacgKZSvBe/fCJ2nGgI4/JnFn2er9RIcX4c1fpK0xGpFBlN2Kmiyc/TqJ4WleklaMq0bfvJiG0DOQK5izphaxMY15oUQfJ4cLRfjPgUGp7Ed7yJGAOH6vSqhT2foP3nt1XCa3XxD3kepCxU87qUflvagz9E4LyEkD5W93XLRg/Nm1lVUepp8MJyKIYXnV9iCLh3ngnC8bDJb0m6vdLgAeSXTbd2ZXXKQmoB7SPV94O34TAM4CvgeOG90OD/4vV2wDbgLOPE7YQoOalO9+DB4YP+4DjkjDe0f3PVzquDPcUspAz4CuJw69864Z2nAA==
+
+
+$b  = [System.Text.Encoding]::UTF8.GetBytes($textBase64In)
+
+d2NCTUE4Z1A1ZWQ0MlJIS0FRZ0FWeWttTE1TOGUxN1FBb3ZIMjUvMmxCR1JSaDNZVUZtTlBVTjM4dDRJL3pQQXhDdEY5YXVNZWpxNGJ5MDJHRDc0V2JqSjF2akIzanIwb3ZpbmFDRmVESnA1bG1OY3RyMWh0UElhVWs0QUNQQmYzeWpkcml2OVFPWEQyMXp1Wld2NVRoVzhUQWFjZ0taU3ZCZS9mQ0oybkdnSTQvSm5GbjJlcjlSSWNYNGMxZnBLMHhHcEZCbE4yS21peWMvVHFKNFdsZWtsYU1xMGJmdkppRzBET1FLNWl6cGhheE1ZMTVvVVFmSjRjTFJmalBnVUdwN0VkN3lKR0FPSDZ2U3FoVDJmb1AzbnQxWENhM1h4RDNrZXBDeFU4N3FVZmx2YWd6OUU0THlFa0Q1VzkzWExSZy9ObTFsVlVlcHA4TUp5S0lZWG5WOWlDTGgzbmduQzhiREpiMG02dmRMZ0FlU1hUYmQyWlhYS1Ftb0I3U1BWOTRPMzRUQU00Q3ZnZU9HOTBPRC80dlYyd0RiZ0xPUEU3WVFvT2FsTzkrREI0WVArNERqa2pEZTBmM1BWenF1RFBjVXNwQXo0Q3VKdzY5ODY0WjJuQUE9PQ==
+
+
+
+Function Base64Encode($textIn) 
+{
+    $b  = [System.Text.Encoding]::UTF8.GetBytes("Hello World")
+    $encoded = [System.Convert]::ToBase64String($b)
+    return $encoded    
+}
+
+Function Base64Decode($textBase64In) 
+{
+    $b  = [System.Convert]::FromBase64String($textBase64In)
+    $decoded = [System.Text.Encoding]::UTF8.GetString($b)
+    return $decoded
+}
+
+#Test Logic 
+$base64Encoded = Base64Encode("Hello World") 
+Write-Host "`$base64Encoded=$base64Encoded"
+
+$base64Decoded = Base64Decode($base64Encoded) 
+Write-Host "`$base64Decoded=$base64Decoded"
